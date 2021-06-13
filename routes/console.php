@@ -24,9 +24,9 @@ Artisan::command('inspire', function () {
 
 Artisan::command('create-super-admin', function () {
   $super_admin =  User::create([
-        'username' => 'admin',
-        'email' => 'admin@admin.com',
-        'password' => bcrypt('adminadmin'),
+        'username' => 'super-admin',
+        'email' => 'super@admin.com',
+        'password' => bcrypt('super-admin'),
         'phone_number'=> '0123456789',
     ]);
 

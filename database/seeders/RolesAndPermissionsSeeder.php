@@ -75,9 +75,9 @@ class RolesAndPermissionsSeeder extends Seeder
         $super_admin_role_api = Role::create(['guard_name' => 'api', 'name' => 'super-admin']);
 
         $super_admin = User::create([
-            'username' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('adminadmin'),
+            'username' => 'super-admin',
+            'email' => 'super@admin.com',
+            'password' => bcrypt('super-admin'),
             'phone_number' => '0123456789',
         ])->givePermissionTo(Permission::all())
             ->assignRole([$super_admin_role_web, $super_admin_role_api]);
