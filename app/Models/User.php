@@ -4,16 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Joselfonseca\LighthouseGraphQLPassport\HasSocialLogin;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Joselfonseca\LighthouseGraphQLPassport\HasLoggedInTokens;
 use Joselfonseca\LighthouseGraphQLPassport\MustVerifyEmailGraphQL;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasApiTokens, HasSocialLogin, MustVerifyEmailGraphQL, HasLoggedInTokens;
+    use HasFactory, Notifiable, HasApiTokens, HasSocialLogin, MustVerifyEmailGraphQL, HasLoggedInTokens, HasRoles;
 
     /**
      * The attributes that are mass assignable.
