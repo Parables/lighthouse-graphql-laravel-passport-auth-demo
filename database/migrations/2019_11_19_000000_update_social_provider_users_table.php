@@ -22,11 +22,8 @@ class UpdateSocialProviderUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('provider')->index();
             $table->string('provider_id')->index();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-        });
-
-        Schema::table('social_providers', function (Blueprint $table) {
-            $table->foreignId('user_id')->after('provider_id')->constrained()->onDelete('cascade');;
         });
     }
 
